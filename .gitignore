@@ -107,3 +107,5 @@ ENV/
 
 # Database
 #*.sqlite3
+data.json
+vizdb.dump
