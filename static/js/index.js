@@ -72,13 +72,13 @@ function updateMon(num, id = -1, _callback = null) {
 				gender = $(".gender_dropdown[id="+parseInt(num)+"] option:selected").attr("value").slice(0,1);
 				if (gender == "X")
 				{
-					$(e_pfx+".gendersprite").css("visibility", "hidden");
+					$(e_pfx+".gendersprite").css("display", "none");
 					$(e_pfx+".lvl").css("left", String($(e_pfx+".mon_name").width()+18)+"px");
 				}
 				else
 				{
 					$(e_pfx+".lvl").css("left", String($(e_pfx+".mon_name").width()+18+36)+"px");
-					$(e_pfx+".gendersprite").css("visibility", "visible/inherit");
+					$(e_pfx+".gendersprite").css("display", "inline");
 				}
 				console.log(String($(e_pfx+".mon_name").width())+"px");
 				$(e_pfx+".mon_id_string").text(data[1]);
