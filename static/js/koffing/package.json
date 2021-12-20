@@ -1,0 +1,70 @@
+{
+  "_from": "koffing",
+  "_id": "koffing@0.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-ZdKwTJHVcDHjVmTCIET4zCQq9iiFh97gOqPCw++U7MctRgfQQPx0N+AemOEZTpTWna9BbtkWdtgBiISxYBj0UA==",
+  "_location": "/koffing",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "koffing",
+    "name": "koffing",
+    "escapedName": "koffing",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/koffing/-/koffing-0.4.0.tgz",
+  "_shasum": "4dd4c3b7d7f9d7f5f46be7a9db35feb65488919d",
+  "_spec": "koffing",
+  "_where": "G:\\pkmn team viz\\teamviz",
+  "author": {
+    "name": "Javi Aguilar",
+    "url": "@itjsavi"
+  },
+  "bugs": {
+    "url": "https://github.com/capsulemonsters/koffing/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Pokemon Showdown Team parser that converts your strategies to machine-readable JSON code.",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "material-ui": "^1.0.0-beta.38",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "homepage": "https://github.com/capsulemonsters/koffing#readme",
+  "keywords": [
+    "pokemon",
+    "smogon",
+    "showdown",
+    "pokemon-showdown"
+  ],
+  "license": "MIT",
+  "main": "dist/koffing.js",
+  "name": "koffing",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capsulemonsters/koffing.git"
+  },
+  "scripts": {
+    "build-all": "npm run build-dist && npm run build-docs",
+    "build-dist": "npx webpack --mode production",
+    "build-docs": "npx webpack --config ./webpack.config-docs.js --mode production",
+    "start": "npx webpack-dev-server --config ./webpack.config-docs.js --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.4.0"
+}

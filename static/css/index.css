@@ -1,0 +1,379 @@
+@font-face {
+	font-family: FOT-Kakugo;
+	src: url(fot-kakugo.ttf);
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+	font-family: FOT-Kakugo;
+	font-size: 26px;
+	background-color: #1cc2ec;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+img:not([src]) {
+   visibility: hidden;
+}
+
+span {
+	font-size: 11px;
+}
+
+span a {
+	color: #fff;
+}
+
+.import_button, .export_button {
+	background-color: #fff;
+	border: 2px solid #1cc2ec;
+	border-radius: 3px;
+	height: 35px;
+	font-family: FOT-Kakugo;
+}
+
+.gen_button {
+	background-color: #1cc2ec;
+	border: 2px solid #fff;
+	border-radius: 3px;
+	height: 35px;
+	font-family: FOT-Kakugo;
+}
+
+.save_img {
+	width: 200px;
+	height: 30px;
+	font-size: 16px;
+	background-color: #fff;
+	border: 2px solid #1cc2ec;
+	border-radius: 3px; 
+	text-align: center;
+	line-height: 30px;
+}
+
+.import_button:hover, .export_button:hover {
+	border: 2px solid #00afb5;
+	background-color: #b1e6f3;
+}
+
+.gen_button:hover {
+	border: 2px solid #fff;
+	background-color: #7ad9f1;
+}
+
+a:hover .save_img {
+	border: 2px solid #00afb5;
+	background-color: #b1e6f3;
+}
+
+.import_button:active, .export_button:active{
+	background-color: #13acd3;
+	border: 2px solid #1cc2ec;
+	color: #fff;
+}
+
+.gen_button:active {
+	background-color: #00afb5;
+	border: 2px solid #1cc2ec;
+	color: #fff;
+}
+
+.image_overlay, .import_overlay, .export_overlay {
+	background-color: rgba(0, 0, 0, 0.75);
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+.image_overlay a:link {
+	text-decoration: none;
+	color: #000;
+}
+
+.output_img {
+	position: fixed;
+	width: auto;
+	height: auto;
+	max-width: 75%;
+	max-height: 75%;
+	top: 12.5%;
+}
+
+.import_box, .export_box {
+	position: fixed;
+	width: auto;
+	height: auto;
+	max-width: 75%;
+	max-height: 75%;
+	top: 90px;
+	pointer-events: none;
+}
+
+.hide_button {
+	position: fixed;
+	right: 1.5vw;
+	top: 10.8px;
+	padding: 0;
+	border: none;
+	height: 32.4px;
+	width: 32.4px;
+	background: url("/static/ui/X.png") no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.hide_button:hover {
+	background: url("/static/ui/X_hover.png") no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.click_bg:active { border-style: outset; }
+
+.warn_box {
+	position: relative;
+	width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 15px;
+	text-align: center;
+	border-radius: 10px;
+	pointer-events: auto;
+}
+
+.monsprite {
+	transform-origin: bottom;
+	transform: scale(2);
+	-ms-interpolation-mode: nearest-neighbor;
+	image-rendering: crisp-edges;
+	position: absolute;
+	bottom: 162px;
+	left: 32px;
+}
+
+.itemsprite {
+	transform-origin: center;
+	transform: scale(2);
+	-ms-interpolation-mode: nearest-neighbor;
+	image-rendering: crisp-edges;
+	position: absolute;
+	bottom: 171px;
+	left: 111px;
+}
+
+.monrow {
+	display: flex;
+	justify-content: center;
+}
+
+.monrow + .monrow {
+	margin-top: 20px;
+}
+
+.monbox {
+	height: 340px;
+	width: 798px;
+	overflow: auto;
+	background-color: #000;
+	position: relative;
+}
+
+.monbox + .monbox {
+	margin-left: 70px;
+}
+
+.add_overlay {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #1cc2ec;
+}
+
+.add_button {
+	position: absolute;
+	right: 349px;
+	top: 120px;
+	padding: 0;
+	border: none;
+	height: 100px;
+	width: 100px;
+	background: url("/static/ui/plus.png") no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.remove_button {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	padding: 0;
+	border: none;
+	height: 25px;
+	width: 25px;
+	background: url("/static/ui/X_black.png") no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.add_button:hover, .add_button:active {
+	background: url("/static/ui/plus_hover.png") no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.remove_button:hover, .remove_button:active {
+	background: url("/static/ui/X_hover.png") no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.teal {
+	width: 408px;
+	height: 265px;
+	background-color: #00afb5;
+	color: white;
+	position: absolute;
+}
+
+.white {
+	width: 390px;
+	height: 265px;
+	background-color: #fff;
+	position: absolute;
+	left: 408px;
+	font-weight: 100;
+}
+
+.left_form {
+	width: 398px;
+	height: 75px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	line-height: 1;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.right_form {
+	width: 290px;
+	height: 65px;
+	position: absolute;
+	left: 408px;
+	top: 0px;
+	overflow: hidden;
+	line-height: 1.2;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 9px;
+}
+
+.right_form br + select {
+	margin-top: 8px;
+}
+
+.type1 {
+	position: absolute;
+	left: 184px;
+	top: 6px;
+}
+
+.type2 {
+	position: absolute;
+	left: 184px;
+	top: 59px;
+}
+
+.mon_name {
+	position: absolute;
+	left: 10px;
+	bottom: 109px;
+}
+
+.lvl {
+	position: absolute;
+	bottom: 109px;
+}
+
+.gendersprite {
+	position: absolute;
+	left: 140.967px;
+	bottom: 112px;
+}
+
+.item_name {
+	position: absolute;
+	left: 10px;
+	bottom: 9px;
+}
+
+.ability_name {
+	position: absolute;
+	left: 10px;
+	bottom: 60.5px;
+}
+
+.movesprite_1 {
+	position: absolute;
+	left: 4px;
+	top: 3px;
+}
+
+.move_name_1 {
+	position: absolute;
+	left: 68px;
+	top: 13px;
+}
+
+.movesprite_2 {
+	position: absolute;
+	left: 4px;
+	top: 67px;
+}
+
+.move_name_2 {
+	position: absolute;
+	left: 68px;
+	top: 77px;
+}
+
+.movesprite_3 {
+	position: absolute;
+	left: 4px;
+	top: 131px;
+}
+
+.move_name_3 {
+	position: absolute;
+	left: 68px;
+	top: 141px;
+}
+
+.movesprite_4 {
+	position: absolute;
+	left: 4px;
+	top: 195px;
+}
+
+.move_name_4 {
+	position: absolute;
+	left: 68px;
+	top: 206px;
+}
