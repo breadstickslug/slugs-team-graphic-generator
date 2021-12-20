@@ -327,7 +327,7 @@ def makeImage(request):
         teamname = request.GET.get('teamname')
         tnw = kakugo.getmask(teamname).getbbox()[2]
         img_draw.text((878+((535-tnw)/2), 883), teamname, (255, 255, 255), font=kakugo)
-        watermark = "Generate your own team image at [URL]"
+        watermark = "Image generated at slugs-tgg.herokuapp.com/viz"
         wmw = kakugo.getmask(watermark).getbbox()[2]
         img_draw.text((512+((900-wmw)/2), 947), watermark, (0, 0, 0), font=kakugo)
         fp = TemporaryFile()
